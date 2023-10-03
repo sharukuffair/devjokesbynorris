@@ -1,5 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Young Serif", serif;
+}
+
+:root {
+  --bg-color: #040d12;
+  --theme-main-1: #e14d2a;
+  --theme-main-2: #279eff;
+  --outline-color: #f0f0f0;
+  --text-color: #ffffff;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  user-select: none;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+  padding-block: 2rem;
+}
+img {
+  width: 20%;
+  aspect-ratio: 2;
+}
+.content-container {
+  width: 800px;
+  height: 300px;
+  border: 2px solid #f0f0f046;
+  border-radius: 1rem;
+  padding: 2rem;
 }

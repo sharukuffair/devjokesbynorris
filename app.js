@@ -14,14 +14,14 @@ async function fetchJokesData() {
     // render function
     renderJokes(data);
   } catch (e) {
-    console.log(e + "something went wrong");
+    console.log(e);
   }
 }
 
 // render in UI
 function renderJokes(data) {
   try {
-    jokeContainer.textContent = `❝ ${data?.value} ❞`;
+    jokeContainer.textContent = `${data?.value}`;
   } catch (e) {
     console.log(e);
   }
