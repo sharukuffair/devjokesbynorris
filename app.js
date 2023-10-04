@@ -44,7 +44,3 @@ function addToFavJokes() {
 }
 
 btnLike.addEventListener("click", addToFavJokes);
-
-// favJokesList.forEach((joke) => {
-//   console.log(joke);
-// });
