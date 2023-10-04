@@ -95,3 +95,21 @@ img {
 .next {
   background-color: var(--theme-main-1);
 }
+
+.add-to-fav {
+  font-size: 0.7rem;
+  background-color: var(--theme-main-2);
+  padding: 0.5rem 0.3rem;
+  border-radius: 7px;
+  border: 2px solid #f0f0f046;
+  position: absolute;
+  top: -80%;
+  left: -0.8%;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.4s all ease-in-out;
+}
+.active {
+  opacity: 1;
+  transform: scale(1);
+}

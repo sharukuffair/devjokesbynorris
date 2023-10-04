@@ -1,8 +1,13 @@
 const jokeContainer = document.querySelector(".content");
 const btnNext = document.querySelector(".next");
+const btnLike = document.querySelector(".like");
+const notifyAddTOFav = document.querySelector(".add-to-fav");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
+
+// fav jokes list
+let favJokesList = [];
 
 // API CALL
 async function fetchJokesData() {
@@ -28,3 +33,18 @@ function renderJokes(data) {
 }
 
 btnNext.addEventListener("click", fetchJokesData);
+
+function addToFavJokes() {
+  favJokesList.push(jokeContainer.textContent);
+  notifyAddTOFav.classList.add("active");
+
+  setTimeout(() => {
+    notifyAddTOFav.classList.remove("active");
+  }, 1000);
+}
+
+btnLike.addEventListener("click", addToFavJokes);
+
+// favJokesList.forEach((joke) => {
+//   console.log(joke);
+// });
