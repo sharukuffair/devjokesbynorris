@@ -8,6 +8,7 @@ jokeContainer.textContent = fetchJokesData();
 
 // fav jokes list
 let favJokesList = [];
+let storeJokes = [];
 
 // API CALL
 async function fetchJokesData() {
@@ -35,12 +36,27 @@ function renderJokes(data) {
 btnNext.addEventListener("click", fetchJokesData);
 
 function addToFavJokes() {
-  favJokesList.push(jokeContainer.textContent);
-  notifyAddTOFav.classList.add("active");
+  // favJokesList.push(jokeContainer.textContent);
 
+  localStorage.setItem(
+    Math.floor(Math.random() * 1000),
+    jokeContainer.textContent
+  );
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    // console.log(` ${localStorage.getItem(key)}`);
+    favJokesList.push(localStorage.getItem(key));
+  }
+
+  // favJokesList.push(localStorage.getItem("joke"));
+  notifyAddTOFav.classList.add("active");
   setTimeout(() => {
     notifyAddTOFav.classList.remove("active");
   }, 1000);
 }
 
 btnLike.addEventListener("click", addToFavJokes);
+// console.log(storeJokes);
+
+// console.log(favJokesList);
+console.log(favJokesList);
