@@ -1,7 +1,7 @@
 const jokeContainer = document.querySelector(".content");
 const btnNext = document.querySelector(".next");
 const btnLike = document.querySelector(".like");
-const notifyAddTOFav = document.querySelector(".add-to-fav");
+const notifyAddToFav = document.querySelector(".add-to-fav");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
@@ -49,9 +49,9 @@ function addToFavJokes() {
   }
 
   // favJokesList.push(localStorage.getItem("joke"));
-  notifyAddTOFav.classList.add("active");
+  notifyAddToFav.classList.add("active");
   setTimeout(() => {
-    notifyAddTOFav.classList.remove("active");
+    notifyAddToFav.classList.remove("active");
   }, 1000);
 }
 
