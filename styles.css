@@ -112,3 +112,21 @@ img {
   opacity: 1;
   transform: scale(1);
 }
+.fav {
+  margin-top: 5rem;
+}
+.fav h1 {
+  color: var(--theme-main-1);
+  letter-spacing: 3px;
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0;
+  text-shadow: 2px 2px var(--theme-main-2);
+}
+
+.fav-container {
+  width: 800px;
+  border: 2px solid #f0f0f046;
+  border-radius: 1rem;
+  padding: 2rem;
+}
