@@ -42,11 +42,11 @@ function addToFavJokes() {
     Math.floor(Math.random() * 1000),
     jokeContainer.textContent
   );
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    // console.log(` ${localStorage.getItem(key)}`);
-    favJokesList.push(localStorage.getItem(key));
-  }
+  // for (let i = 0; i < localStorage.length; i++) {
+  //   let key = localStorage.key(i);
+  //   // console.log(` ${localStorage.getItem(key)}`);
+  //   favJokesList.push(localStorage.getItem(key));
+  // }
 
   // favJokesList.push(localStorage.getItem("joke"));
   notifyAddToFav.classList.add("active");
@@ -59,4 +59,17 @@ btnLike.addEventListener("click", addToFavJokes);
 // console.log(storeJokes);
 
 // console.log(favJokesList);
-console.log(favJokesList);
+// console.log(favJokesList);
+
+// console.log(typeof localStorage);
+
+// for (let j in localStorage) {
+//   // console.log(localStorage[j]);
+//   favJokesList.push(localStorage.getItem(j));
+//   if (favJokesList) {
+//     favJokesList.forEach((joke) => {
+//       show.textContent = joke;
+//     });
+//   }
+// }
+// console.log(favJokesList);
