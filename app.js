@@ -52,8 +52,12 @@ function renderFavJokes() {
   favCon.style.display = "flex";
   favCon.insertAdjacentHTML(
     "afterbegin",
-    `<p class="joke">❝ ${jokeContainer.textContent} ❞</p>`
+    `<p class="joke" onClick='copyFunction()'>❝ ${jokeContainer.textContent} ❞</p>`
   );
+}
+
+function copyFunction() {
+  console.log("got clicked");
 }
 
 // might be used in futher usecase or new features
