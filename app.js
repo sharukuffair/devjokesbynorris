@@ -2,15 +2,15 @@ const jokeContainer = document.querySelector(".content");
 const btnNext = document.querySelector(".next");
 const btnLike = document.querySelector(".like");
 const notifyAddToFav = document.querySelector(".add-to-fav");
+const joke = document.querySelector(".joke");
+const sharuk = document.querySelector(".sharuk");
 const favCon = document.querySelector(".fav-container");
-const favPara = document.querySelector(".fav-para");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
 
 // fav jokes list
 let favJokesList = [];
-let storeJokes = [];
 
 // API CALL
 async function fetchJokesData() {
@@ -52,12 +52,25 @@ function renderFavJokes() {
   favCon.style.display = "flex";
   favCon.insertAdjacentHTML(
     "afterbegin",
-    `<p class="joke" onClick='copyFunction()'>❝ ${jokeContainer.textContent} ❞</p>`
+    ` <div class="joke">
+              <p class='sharuk'>❝ ${jokeContainer.textContent} ❞</p> 
+              <ion-icon name="copy-outline" class='copyBtn' onClick='copyContent()'>
+              </ion-icon>
+            </div>`
   );
 }
 
-function copyFunction() {
-  console.log("got clicked");
+// `<p class="joke" onClick='copyFunction()'>❝ ${jokeContainer.textContent} ❞
+//     sharuk
+//     </p>`;
+
+async function copyContent(e) {
+  try {
+    // console.log(e.target);
+    await navigator.clipboard.writeText(sharuk.textContent());
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 // might be used in futher usecase or new features
@@ -68,5 +81,3 @@ function copyFunction() {
 //     `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
 //   );
 // }
-
-// console.log(favJokesList);

@@ -152,8 +152,22 @@ img {
 }
 .joke {
   padding: 1rem;
-  border: 1px solid #f0f0f046;
+  border: 2px solid #f0f0f00c;
   border-radius: 1rem;
   background-color: #f0f0f00c;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.joke > p {
+  width: 90%;
   line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.copyBtn {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #f0f0f09f;
 }
