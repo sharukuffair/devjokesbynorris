@@ -126,17 +126,34 @@ img {
 
 .fav-container {
   width: 800px;
+  max-height: 400px;
+  overflow-y: scroll;
   border: 2px solid #f0f0f046;
   border-radius: 1rem;
   padding: 2rem;
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  display: none;
 }
 
+/* CUSTOM SCROLL BAR */
+.fav-container::-webkit-scrollbar {
+  width: 0.7rem;
+}
+.fav-container::-webkit-scrollbar-track {
+  background-color: #f0f0f046;
+  border-radius: 1rem;
+}
+.fav-container::-webkit-scrollbar-thumb {
+  background-color: #f0f0f048;
+  border-radius: 1rem;
+}
 .joke {
   padding: 1rem;
   border: 1px solid #f0f0f046;
   border-radius: 1rem;
   background-color: #f0f0f00c;
+  line-height: 1.7;
 }

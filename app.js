@@ -39,20 +39,7 @@ btnNext.addEventListener("click", fetchJokesData);
 
 function addToFavJokes() {
   localStorage.setItem("joke", jokeContainer.textContent);
-
-  favCon.insertAdjacentHTML(
-    "afterbegin",
-    `<p class="joke">❝ ${localStorage.getItem(localStorage.key("joke"))} ❞</p>`
-  );
-
-  // for (var i = 0; i < localStorage.length; i++) {
-  //   favCon.insertAdjacentHTML(
-  //     "afterbegin",
-  //     `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
-  //   );
-  // }
-
-  // console.log(favJokesList);
+  renderFavJokes();
   notifyAddToFav.classList.add("active");
   setTimeout(() => {
     notifyAddToFav.classList.remove("active");
@@ -60,3 +47,22 @@ function addToFavJokes() {
 }
 
 btnLike.addEventListener("click", addToFavJokes);
+
+function renderFavJokes() {
+  favCon.style.display = "flex";
+  favCon.insertAdjacentHTML(
+    "afterbegin",
+    `<p class="joke">❝ ${jokeContainer.textContent} ❞</p>`
+  );
+}
+
+// might be used in futher usecase or new features
+// `<p class="joke">❝ ${localStorage.getItem(localStorage.key("joke"))} ❞</p>`;
+// for (var i = 0; i < localStorage.length; i++) {
+//   favCon.insertAdjacentHTML(
+//     "afterbegin",
+//     `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
+//   );
+// }
+
+// console.log(favJokesList);
