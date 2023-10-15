@@ -40,12 +40,17 @@ btnNext.addEventListener("click", fetchJokesData);
 function addToFavJokes() {
   localStorage.setItem("joke", jokeContainer.textContent);
 
-  for (var i = 0; i < localStorage.length; i++) {
-    favCon.insertAdjacentHTML(
-      "afterbegin",
-      `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
-    );
-  }
+  favCon.insertAdjacentHTML(
+    "afterbegin",
+    `<p class="joke">❝ ${localStorage.getItem(localStorage.key("joke"))} ❞</p>`
+  );
+
+  // for (var i = 0; i < localStorage.length; i++) {
+  //   favCon.insertAdjacentHTML(
+  //     "afterbegin",
+  //     `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
+  //   );
+  // }
 
   // console.log(favJokesList);
   notifyAddToFav.classList.add("active");
