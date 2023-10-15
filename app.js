@@ -3,6 +3,7 @@ const btnNext = document.querySelector(".next");
 const btnLike = document.querySelector(".like");
 const notifyAddToFav = document.querySelector(".add-to-fav");
 const favCon = document.querySelector(".fav-container");
+const favPara = document.querySelector(".fav-para");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
@@ -37,12 +38,16 @@ function renderJokes(data) {
 btnNext.addEventListener("click", fetchJokesData);
 
 function addToFavJokes() {
-  localStorage.setItem(
-    Math.floor(Math.random() * 1000),
-    jokeContainer.textContent
-  );
+  localStorage.setItem("joke", jokeContainer.textContent);
 
-  // favJokesList.push(localStorage.getItem("joke"));
+  for (var i = 0; i < localStorage.length; i++) {
+    favCon.insertAdjacentHTML(
+      "afterbegin",
+      `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
+    );
+  }
+
+  // console.log(favJokesList);
   notifyAddToFav.classList.add("active");
   setTimeout(() => {
     notifyAddToFav.classList.remove("active");
@@ -50,51 +55,3 @@ function addToFavJokes() {
 }
 
 btnLike.addEventListener("click", addToFavJokes);
-
-// window.addEventListener("storage", myFunction);
-
-// function myFunction(e) {
-//   console.log(e);
-//   console.log("change made in storage");
-// }
-// console.log(localStorage);
-
-// favJokesList.push(jokeContainer.textContent);
-
-// for (let i = 0; i < localStorage.length; i++) {
-//   let key = localStorage.key(i);
-//   console.log(` ${localStorage.getItem(key)}`);
-//   favJokesList.push(localStorage.getItem(key));
-// }
-
-for (var i = 0; i < localStorage.length; i++) {
-  // $("body").append(localStorage.getItem(localStorage.key(i)));
-  // demo.textContent = localStorage.getItem(localStorage.key(i));
-  favJokesList.push(localStorage.getItem(localStorage.key(i)));
-}
-console.log(favJokesList);
-
-favJokesList.forEach(function (item, index) {
-  console.log(item);
-  // let p = document.createElement("p");
-  // p.appendChild("body");
-  // p.textContent = item;
-});
-
-// console.log(storeJokes);
-
-// console.log(favJokesList);
-// console.log(favJokesList);
-
-// console.log(typeof localStorage);
-
-// for (let j in localStorage) {
-//   // console.log(localStorage[j]);
-//   favJokesList.push(localStorage.getItem(j));
-//   if (favJokesList) {
-//     favJokesList.forEach((joke) => {
-//       show.textContent = joke;
-//     });
-//   }
-// }
-// console.log(favJokesList);

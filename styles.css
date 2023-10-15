@@ -121,7 +121,7 @@ img {
   font-size: 3rem;
   text-align: center;
   margin: 2rem 0;
-  text-shadow: 2px 2px var(--theme-main-2);
+  text-shadow: 2px 2px #f0f0f046;
 }
 
 .fav-container {
@@ -129,4 +129,14 @@ img {
   border: 2px solid #f0f0f046;
   border-radius: 1rem;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.joke {
+  padding: 1rem;
+  border: 1px solid #f0f0f046;
+  border-radius: 1rem;
+  background-color: #f0f0f00c;
 }
