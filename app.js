@@ -2,9 +2,12 @@ const jokeContainer = document.querySelector(".content");
 const btnNext = document.querySelector(".next");
 const btnLike = document.querySelector(".like");
 const notifyAddToFav = document.querySelector(".add-to-fav");
+
 const joke = document.querySelector(".joke");
-const sharuk = document.querySelector(".sharuk");
+const jokeContent = document.querySelector("[data-jokeContent]");
 const favCon = document.querySelector(".fav-container");
+const copyBtn = document.querySelector(".copyBtn");
+const blockquote = document.getElementsByTagName("blockquote");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
@@ -50,27 +53,24 @@ btnLike.addEventListener("click", addToFavJokes);
 
 function renderFavJokes() {
   favCon.style.display = "flex";
-  favCon.insertAdjacentHTML(
-    "afterbegin",
-    ` <div class="joke">
-              <p class='sharuk'>❝ ${jokeContainer.textContent} ❞</p> 
+  let html = ` <div class="joke">
+              <blockquote class='jokeContent'>❝ ${jokeContainer.textContent} ❞</blockquote> 
               <ion-icon name="copy-outline" class='copyBtn' onClick='copyContent()'>
               </ion-icon>
-            </div>`
-  );
+            </div>`;
+  favCon.insertAdjacentHTML("afterbegin", html);
 }
 
-// `<p class="joke" onClick='copyFunction()'>❝ ${jokeContainer.textContent} ❞
-//     sharuk
-//     </p>`;
-
 async function copyContent(e) {
-  try {
-    // console.log(e.target);
-    await navigator.clipboard.writeText(sharuk.textContent());
-  } catch (e) {
-    console.log(e);
-  }
+  // try {
+  //   await navigator.clipboard.writeText(
+  //     document.getElementsByTagName("blockquote").innerHTML()
+  //   );
+  // } catch (e) {
+  //   console.log(e);
+  // }
+  console.log(blockquote[0].textContent);
+  console.log(e);
 }
 
 // might be used in futher usecase or new features
