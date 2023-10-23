@@ -6,8 +6,6 @@ const notifyAddToFav = document.querySelector(".add-to-fav");
 const joke = document.querySelector(".joke");
 const jokeContent = document.querySelector("[data-jokeContent]");
 const favCon = document.querySelector(".fav-container");
-const copyBtn = document.querySelector(".copyBtn");
-const blockquote = document.getElementsByTagName("blockquote");
 
 // default case
 jokeContainer.textContent = fetchJokesData();
@@ -41,7 +39,7 @@ function renderJokes(data) {
 btnNext.addEventListener("click", fetchJokesData);
 
 function addToFavJokes() {
-  localStorage.setItem("joke", jokeContainer.textContent);
+  // localStorage.setItem("joke", jokeContainer.textContent);
   renderFavJokes();
   notifyAddToFav.classList.add("active");
   setTimeout(() => {

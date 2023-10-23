@@ -21,7 +21,10 @@
   overflow-y: auto;
   background-color: var(--bg-color);
   color: var(--text-color);
-  user-select: none;
+}
+::selection {
+  background-color: #040d12;
+  color: var(--theme-main-1);
 }
 .container {
   display: flex;
