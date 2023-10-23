@@ -54,24 +54,22 @@ btnLike.addEventListener("click", addToFavJokes);
 function renderFavJokes() {
   favCon.style.display = "flex";
   let html = ` <div class="joke">
-              <blockquote class='jokeContent'>❝ ${jokeContainer.textContent} ❞</blockquote> 
-              <ion-icon name="copy-outline" class='copyBtn' onClick='copyContent()'>
-              </ion-icon>
+              <blockquote class='jokeContent'>❝ ${jokeContainer.textContent} ❞</blockquote>   
             </div>`;
   favCon.insertAdjacentHTML("afterbegin", html);
 }
 
-async function copyContent(e) {
-  // try {
-  //   await navigator.clipboard.writeText(
-  //     document.getElementsByTagName("blockquote").innerHTML()
-  //   );
-  // } catch (e) {
-  //   console.log(e);
-  // }
-  console.log(blockquote[0].textContent);
-  console.log(e);
-}
+// async function copyContent(e) {
+//   // try {
+//   //   await navigator.clipboard.writeText(
+//   //     document.getElementsByTagName("blockquote").innerHTML()
+//   //   );
+//   // } catch (e) {
+//   //   console.log(e);
+//   // }
+//   // console.log(blockquote[0].textContent);
+//   // console.log(e);
+// }
 
 // might be used in futher usecase or new features
 // `<p class="joke">❝ ${localStorage.getItem(localStorage.key("joke"))} ❞</p>`;
@@ -81,3 +79,12 @@ async function copyContent(e) {
 //     `<p class="joke">❝ ${localStorage.getItem(localStorage.key(i))} ❞</p>`
 //   );
 // }
+
+// icon btn
+{
+  /* <ion-icon
+  name="copy-outline"
+  class="copyBtn"
+  onClick="copyContent()"
+></ion-icon>; */
+}
